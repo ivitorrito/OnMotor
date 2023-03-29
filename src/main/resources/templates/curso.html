@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Copiadoras Costaluz</title>
+        <style>
+
+            /* Coded with love by Mutiullah Samim */
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background: #2596be !important;
+            }
+            .user_card {
+                height: 200px;
+                width: 250px;
+                margin-top: auto;
+                margin-bottom: auto;
+                background: #eab676;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                padding: 10px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 5px;
+
+            }
+            .brand_logo_container {
+                position: absolute;
+                height: 170px;
+                width: 170px;
+                top: -75px;
+                border-radius: 50%;
+                background: #2596be;
+                padding: 10px;
+                text-align: center;
+            }
+            .brand_logo {
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                border: 2px solid white;
+            }
+            .form_container {
+                margin-top: 100px;
+            }
+            .login_btn {
+                width: 100%;
+                background: #e28743 !important;
+                color: white !important;
+            }
+            .login_btn:focus {
+                box-shadow: none !important;
+                outline: 0px !important;
+            }
+            .login_container {
+                padding: 0 2rem;
+            }
+            .input-group-text {
+                background: #e28743 !important;
+                color: white !important;
+                border: 0 !important;
+                border-radius: 0.25rem 0 0 0.25rem !important;
+            }
+            .input_user,
+            .input_pass:focus {
+                box-shadow: none !important;
+                outline: 0px !important;
+            }
+            .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+                background-color: #e28743 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar bg-dark ">
+            <form class="form-inline" >
+
+                <a class="btn btn-outline-info xs-6 m-3" type="button" href="lista.html" th:href="@{/lista}">Presupuestos</a>
+                <a class="btn btn-outline-info xs-6 m-3" href="Listado.html" th:href="@{/Listado}">Listado de Presupuestos</a>
+                <a class="btn btn-outline-info xs-6 m-3" type="button" href="AgregarMaquinas.html" th:href="@{/Maquinas}">Agregar Maquina</a>
+                <a class="btn btn-outline-info xs-6 m-3" type="button" href="lista.html" th:href="@{/ListadoMaquinas}">Listado de Maquinas</a>
+
+            </form>
+        </nav>
+        <div class="container">
+            <div class="main ">
+                <div class="d-flex justify-content-center h-100">
+
+                    <form action="#" th:action="@{/agregar}" th:object="${curso}" method="post">
+                        <div class="row ">
+                            <div class="user_card m-3">
+
+                                <div class="form-group ">
+                                    <input type="text" th:field="*{nombre}" class="form-control" id="floatingInput" placeholder="Cliente">
+
+                                </div>
+                                <div class="form-group ">
+                                    <label for="exampleInputEmail1" class="form-label ">Modelo</label>
+                                    <select th:field="*{descripcion}">
+                                        <option th:value="'C220'" th:text="C220"></option>
+                                        <option th:value="'C280'" th:text="C280"></option>
+                                        <option th:value="'C360'" th:text="C360"></option>
+                                        <option th:value="'C224e'" th:text="C224e"></option>
+                                        <option th:value="'C284e'" th:text="C284e"></option>
+                                        <option th:value="'C364e'" th:text="C364e"></option>
+                                        <option th:value="'C454e'" th:text="C454e"></option>
+                                        <option th:value="'C554e'" th:text="C554e"></option>
+                                        <option th:value="'C308'" th:text="C308"></option>
+                                        <option th:value="'C368'" th:text="C368"></option>
+                                        <option th:value="'C458'" th:text="C458"></option>
+                                        <option th:value="'C558'" th:text="C558"></option>
+                                        <option th:value="'Bizhub4020'" th:text="Bizhub_4020"></option>
+                                        <option th:value="'Bizhub4050'" th:text="Bizhub_4050"></option>
+                                        <option th:value="'HPA3'" th:text="HP_A3"></option>
+                                        <option th:value="'HPA4'" th:text="HP_A4"></option>
+                                        <option th:value="'bizhub227'" th:text="bizhub_227"></option>
+                                        <option th:value="'bizhub287'" th:text="bizhub_287"></option>
+                                        <option th:value="'bizhub367'" th:text="bizhub_367"></option>
+                                        <option th:value="'SindohD311'" th:text="Sindoh_D311"></option>
+                                        <option th:value="'SindohD310'" th:text="Sindoh_D310"></option>
+                                        <option th:value="'SindohD412'" th:text="Sindoh_D412"></option>
+                                        <option th:value="'SindohD410'" th:text="Sindoh_D410"></option>
+
+
+                                    </select>
+                                </div>
+                                <div class="form-group ">
+                                    <input type="text" th:field="*{precio}" class="form-control" id="floating2" placeholder="Precio Inicial de la Maquina">
+
+                                </div>
+                            </div>
+
+                            <div class="user_card m-3">
+                                <div class="form-group ">
+
+                                    <input type="text" th:field="*{DesRecompra}" class="form-control" id="floating1" placeholder="Descuento por Recompra">
+
+                                </div>
+
+                                <div class="form-group ">
+
+                                    <input type="text" th:field="*{DesNuevoCliente}" class="form-control" id="floating3" placeholder="Descuento Nuevo Cliente">
+
+                                </div>
+                            </div>
+
+                            <div class="user_card m-3">
+                                <div class="form-group ">
+
+                                    <input type="text" th:field="*{renting}" class="form-control m-1" id="floatingInput1" placeholder="Renting">      
+                                    <input type="text" th:field="*{Meses}" class="form-control m-1" id="floatingInput2" placeholder="Meses del Renting">
+                                    <input type="text" th:field="*{PvpRent}" class="form-control m-1" id="floatingInput3" placeholder="Precio del Renting">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="user_card m-3">
+                                <div class="form-group ">
+                                    <input type="text" th:field="*{CopiaColor}" class="form-control" id="floatingInput7" placeholder="CopiaColor">
+
+                                </div>
+                                <div class="form-group ">
+                                    <input type="text" th:field="*{CopiaNegro}" class="form-control" id="floatingInput8" placeholder="CopiaNegro">
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" th:field="*{GarantiaEnMeses}" class="form-control" id="floatingInput9" placeholder="GarantiaEnMeses">
+                                </div>
+                            </div>
+
+                            <div class="user_card m-3">
+
+                                <div class="form-group m-1 ">
+                                    <input type="text" th:field="*{Descuento1}" class="form-control m-1" id="floatingInput10" placeholder="Descuento1">
+
+                                    <input type="text" th:field="*{Precio1}" class="form-control m-1 " id="floatingInput10" placeholder="Precio1">
+                                </div>
+                                <div class="form-group m-1">
+                                    <input type="text" th:field="*{Descuento2}" class="form-control m-1" id="floatingInput11" placeholder="Descuento2">
+                                    <input type="text" th:field="*{Precio2}" class="form-control m-1" id="floatingInput10" placeholder="Precio2">
+                                </div>
+                            </div>
+
+
+                            <div class="user_card m-3">
+
+                                <div class="form-group">
+                                    <input type="text" th:field="*{Descuento3}" class="form-control m-1" id="floatingInput12" placeholder="Descuento3">
+                                    <input type="text" th:field="*{Precio3}" class="form-control m-1" id="floatingInput10" placeholder="Precio3">
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" th:field="*{PrecioMaquina}" class="form-control m-1" id="floatingInput6" placeholder="Precio total con descuentos">
+                                </div>
+                            </div>
+
+                        </div>
+                        <p><input class="main-center btn-dark m-3" type="submit" value="Guardar" /></p>
+                </div>
+
+            </div>
+
+
+
+
+          
+
+        </form>
+    </div><!--main-center"-->
+</div><!--main-->
+</div><!--container--> 
+</body>
+</html>

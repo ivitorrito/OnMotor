@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Lista de Cursos</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light navbar-dark bg-dark">
+            <form class="form-inline" >
+
+                <a class="btn btn-outline-success m-3" type="button" href="lista.html" th:href="@{/lista}">Presupuestos</a>
+               <a class="btn btn-outline-success m-3" href="Listado.html" th:href="@{/Listado}">Listado de Presupuestos</a>
+               <a class="btn btn-outline-success m-3" type="button" href="AgregarMaquinas.html" th:href="@{/Maquinas}">Agregar Maquina</a>
+                <a class="btn btn-outline-success m-3" type="button" href="lista.html" th:href="@{/ListadoMaquinas}">Listado de Maquinas</a>
+
+            </form>
+        </nav>
+        <div class="container">
+            <div class="main ">
+                <div class="main-center ">
+                    <form action="#" th:action="@{/agregarmaquina}" th:object="${Maquinas}" method="post">
+
+                        <div class="form-group m-3">
+                            <input type="text" th:field="*{Maquina}" class="form-control" id="floatingInput" placeholder="Maquina">
+
+                        </div>
+                        <div class="form-group m-3">
+                            <input type="text" th:field="*{Modelo}" class="form-control" id="floating5" placeholder="Modelo">
+
+                        </div>
+                        <div class="form-group m-3">
+                            <input type="text" th:field="*{NumeroSerie}" class="form-control" id="floating2" placeholder="Numero de Serie">
+
+                        </div>
+                        <div class="form-group m-3">
+                            <input type="text" th:field="*{Copias}" class="form-control" id="floating1" placeholder="Copias Totales">
+
+                        </div>
+                        <div class="form-group m-3">
+                            
+                            <textarea class="form-control" th:field="*{Observaciones}" placeholder="Observaciones" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                        </div>
+                        <div class="form-group m-3">
+                            <input type="date" th:field="*{FechaEntrada}" class="form-control" id="floatingInput1" placeholder="Fecha de Entrada">
+                            
+
+                       
+                        <p><input class="main-center m-3" type="submit" value="Guardar" /></p>
+                    </form>
+                    </form>
+                </div><!--main-center"-->
+            </div><!--main-->
+        </div><!--container--> 
+    </body>
+</html>

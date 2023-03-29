@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Lista de Cursos</title>
+    </head>
+    <body>
+        <nav class="navbar bg-dark ">
+            <form class="form-inline" >
+
+                <a class="btn btn-outline-info xs-6 m-3" type="button" href="lista.html" th:href="@{/lista}">Presupuestos</a>
+                <a class="btn btn-outline-info xs-6 m-3" href="Listado.html" th:href="@{/Listado}">Listado de Presupuestos</a>
+                <a class="btn btn-outline-info xs-6 m-3" type="button" href="AgregarMaquinas.html" th:href="@{/Maquinas}">Agregar Maquina</a>
+                <a class="btn btn-outline-info xs-6 m-3" type="button" href="lista.html" th:href="@{/ListadoMaquinas}">Listado de Maquinas</a>
+                <a class="btn btn-outline-info xs-6 m-3" type="button"  th:href="@{/buscalista}">buscar</a>
+               
+                
+            </form>
+
+
+
+        </nav>
+
+
+        <table class="table table-dark table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Descuento Recompra</th>
+                    <th>Descuento Nuevo Cliente</th>
+                    <th>Renting</th>
+                    <th>Meses</th>
+                    <th>Precio Renting</th>
+                    <th>Precio Maquina</th>
+                    <th>Copia Color</th>
+                    <th>Copia Negro</th>
+                    <th>Garantia En Meses</th>
+                    <th>Descuento 1</th>
+                    <th>Precio 1</th>
+                    <th>Descuento 2</th>
+                    <th>Precio 2</th>
+                    <th>Descuento 3</th>
+                    <th>Precio 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="curso : ${cursos}">
+                    <td><a class="btn btn-outline-success sm-4" th:href="@{/pdf/{id}(id=${curso.id})}">PDF</a></td>
+                    <td><span th:text="${curso.nombre}"></span></td>
+                    <td><span th:text="${curso.descripcion}"></span></td>
+                    <td><span th:text="${curso.precio}"></span></td>
+                    <td><span th:text="${curso.DesRecompra}"></span></td>
+                    <td><span th:text="${curso.DesNuevoCliente}"></span></td>
+                    <td><span th:text="${curso.Renting}"></span></td>
+                    <td><span th:text="${curso.Meses}"></span></td>
+                    <td><span th:text="${curso.PvpRent}"></span></td>
+                    <td><span th:text="${curso.PrecioMaquina}"></span></td><!-- comment -->
+                    <td><span th:text="${curso.CopiaColor}"></span></td>
+                    <td><span th:text="${curso.CopiaNegro}"></span></td><!-- comment -->
+                    <td><span th:text="${curso.GarantiaEnMeses}"></span></td><!-- comment -->
+                    <td><span th:text="${curso.Descuento1}"></span></td>
+                    <td><span th:text="${curso.Precio1}"></span></td>
+                    <td><span th:text="${curso.Descuento2}"></span></td>
+                    <td><span th:text="${curso.Precio2}"></span></td>
+                    <td><span th:text="${curso.Descuento3}"></span></td>
+                    <td><span th:text="${curso.Precio3}"></span></td>
+
+
+
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

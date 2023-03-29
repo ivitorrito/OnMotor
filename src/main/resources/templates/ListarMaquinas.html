@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Lista de Cursos</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light navbar-dark bg-dark">
+            <form class="form-inline" >
+
+                <a class="btn btn-outline-success m-3" type="button" href="lista.html" th:href="@{/lista}">Presupuestos</a>
+                <a class="btn btn-outline-success m-3" href="Listado.html" th:href="@{/Listado}">Listado de Presupuestos</a>
+                <a class="btn btn-outline-success m-3" type="button" href="AgregarMaquinas.html" th:href="@{/Maquinas}">Agregar Maquina</a>
+                <a class="btn btn-outline-success m-3" type="button" href="lista.html" th:href="@{/ListadoMaquinas}">Listado de Maquinas</a>
+
+            </form>
+        </nav>
+
+
+        <table class="table table-dark table-bordered table-hover">
+            <thead>
+                <tr>
+                  <th></th>
+                    <th>Maquina</th>
+                    <th>Modelo</th>
+                    <th>Numero de Serie</th>
+                    <th>Copias</th>
+                    <th>Observaciones</th>
+                    <th>Fecha de entrada</th>
+                
+            </thead>
+            <tbody>
+                <tr th:each="Maquinas : ${Maquinas}">
+                   <td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${Maquinas.id})}">Eliminar</a></td>
+                    <td><span th:text="${Maquinas.Maquina}"></span></td>
+                    <td><span th:text="${Maquinas.Modelo}"></span></td>
+                    <td><span th:text="${Maquinas.NumeroSerie}"></span></td>
+                    <td><span th:text="${Maquinas.Copias}"></span></td>
+                    <td><span th:text="${Maquinas.Observaciones}"></span></td>
+                    <td><span th:text="${Maquinas.FechaEntrada}"></span></td>
+                    
+
+
+
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

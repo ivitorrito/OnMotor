@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Buscar Presupuestos</title>
+        <style>
+
+            /* Coded with love by Mutiullah Samim */
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background: #2596be !important;
+            }
+            .user_card {
+                height: 600px;
+                width: 150px;
+                margin-top: auto;
+                margin-bottom: auto;
+                background: #eab676;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                padding: 10px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 5px;
+
+            }
+            .brand_logo_container {
+                position: absolute;
+                height: 170px;
+                width: 170px;
+                top: -75px;
+                border-radius: 50%;
+                background: #2596be;
+                padding: 10px;
+                text-align: center;
+            }
+            .brand_logo {
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                border: 2px solid white;
+            }
+            .form_container {
+                margin-top: 100px;
+            }
+            .login_btn {
+                width: 100%;
+                background: #e28743 !important;
+                color: white !important;
+            }
+            .login_btn:focus {
+                box-shadow: none !important;
+                outline: 0px !important;
+            }
+            .login_container {
+                padding: 0 2rem;
+            }
+            .input-group-text {
+                background: #e28743 !important;
+                color: white !important;
+                border: 0 !important;
+                border-radius: 0.25rem 0 0 0.25rem !important;
+            }
+            .input_user,
+            .input_pass:focus {
+                box-shadow: none !important;
+                outline: 0px !important;
+            }
+            .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+                background-color: #e28743 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar bg-dark ">
+            <form th:action="@{/busca}" th:object="${curso}" method="get" >                  
+                <input type="text" th:field="*{nombre}"  placeholder="Buscar" >
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+            <a class="btn btn-outline-info xs-6 m-3" type="button" th:href="@{/Listado}">Atras</a>
+        </nav>
+       
+            
+            
+        <div clas="row">
+                <div class="user_card main-center m-3" th:each="curso : ${listAllcusros3}">
+                    <h6 class="card-title">Nombre:</h6>
+                    <p class="card-text" th:text="${curso.nombre}"></p>
+                    <h6 class="card-title">Modelo:</h6>
+                    <p class="card-text" th:text="${curso.descripcion}"></p>
+                    <p class="card-text" th:text="${curso.precio}"></p>
+                    <p class="card-text" th:text="${curso.DesRecompra}"></p>
+                    <p class="card-text" th:text="${curso.DesNuevoCliente}"></p>
+                    <p class="card-text" th:text="${curso.Renting}"></p>
+                    <p class="card-text" th:text="${curso.Meses}"></p>
+                    <p class="card-text" th:text="${curso.PvpRent}"></p>
+                    <p class="card-text" th:text="${curso.PrecioMaquina}"></p>
+                    <p class="card-text" th:text="${curso.CopiaColor}"></p>
+                    <p class="card-text" th:text="${curso.CopiaNegro}"></p>
+                    <p class="card-text" th:text="${curso.GarantiaEnMeses}"></p>
+                    <p class="card-text" th:text="${curso.Descuento1}"></p>
+                    <p class="card-text" th:text="${curso.Precio1}"></p>
+                    <p class="card-text" th:text="${curso.Descuento2}"></p>
+                    <p class="card-text" th:text="${curso.Precio2}"></p>
+                    <p class="card-text" th:text="${curso.Descuento3}"></p>
+                    <p class="card-text" th:text="${curso.Precio3}"></p>
+                    <a  class="btn btn-outline-info sm-4" th:href="@{/pdf/{id}(id=${curso.id})}">PDF</a>
+                </div>
+           </div>
+
+
+
+
+
+
+       
+   
+</body>
+</html>
